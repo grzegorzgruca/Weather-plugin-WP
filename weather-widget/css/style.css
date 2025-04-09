@@ -1,0 +1,45 @@
+.city-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 300px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.city-form input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.city-form button {
+  padding: 10px;
+  background-color: #0073aa;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.city-form button:hover {
+  background-color: #005f8d;
+}
+
+.error-msg {
+  color: red;
+  font-size: 14px;
+}
+.weather-result {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #f0f8ff;
+  border-left: 4px solid #0073aa;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  color: #0073aa;
+}

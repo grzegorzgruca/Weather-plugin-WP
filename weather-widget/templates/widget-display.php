@@ -6,5 +6,5 @@
 </form>
 
 <div id="weather-result" class="weather-result" style="display: none;">
-  <p><span class="temperature_result">--</span>°C</p>
+  <p><span class="temperature_result">--</span></p>
 </div>

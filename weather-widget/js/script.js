@@ -38,9 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const temp = weatherData.current.temperature_2m;
       const code = weatherData.current.weathercode;
-
-      console.log(`🌡️ Temperatura: ${weatherData}°C`);
-      console.log(`☁️ Kod pogody: ${code}`);
       const data = {temperature: temp}
       changeWeatherData(data, true);
     } catch (error) {
@@ -52,6 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
  const changeWeatherData = (changeWeaterDataTemp, state) => {
   const resultBox = document.getElementById("weather-result");
   el = document.getElementsByClassName("temperature_result")[0]
-  state ? el.textContent = `Temperatura: ${changeWeaterDataTemp.temperature}` : el.textContent = "Nie znalwziono miasta, spróbuj ponownie."
+  state ? el.textContent = `Temperatura: ${changeWeaterDataTemp.temperature}°C` : el.textContent = "Nie znaleziono miasta, spróbuj ponownie."
   resultBox.style.display = "block";
 };

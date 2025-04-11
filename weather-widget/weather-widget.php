@@ -6,6 +6,11 @@ Version: 1.0
 Author: Grzegorz
 */
 
+//ATTACHED FILES
+require_once plugin_dir_path(__FILE__) . 'admin/menu.php';
+require_once plugin_dir_path(__FILE__) . 'admin/settings.php';
+
+
 function ww_register_weather_widget() {
     require_once plugin_dir_path(__FILE__) . 'includes/api-functions.php';
     register_widget('WW_weather_widget');
@@ -32,7 +37,7 @@ class WW_weather_widget extends WP_Widget {
 // Shortcode: [weather_form]
 function ww_weather_shortcode() {
     wp_enqueue_style('ww-weather-style', plugins_url('css/style.css', __FILE__));
-    wp_enqueue_script('ww-weather-script', plugins_url('js/script.js', __FILE__), array(), false, true);
+    wp_enqueue_script('ww-weather-script', plugins_url('js/api.js', __FILE__), array(), false, true);
 
     ob_start();
     include plugin_dir_path(__FILE__) . 'templates/widget-display.php';

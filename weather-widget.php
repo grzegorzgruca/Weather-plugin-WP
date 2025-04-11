@@ -7,12 +7,10 @@ Author: Grzegorz
 */
 
 //ATTACHED FILES
-require_once plugin_dir_path(__FILE__) . 'admin/menu.php';
-require_once plugin_dir_path(__FILE__) . 'admin/settings.php';
-
+require_once plugin_dir_path(__FILE__) . 'admin/pageRenderer.php';
+require_once plugin_dir_path(__FILE__) . 'admin/settingsRenderer.php';
 
 function ww_register_weather_widget() {
-    require_once plugin_dir_path(__FILE__) . 'includes/api-functions.php';
     register_widget('WW_weather_widget');
 }
 add_action('widgets_init', 'ww_register_weather_widget');
@@ -36,9 +34,17 @@ class WW_weather_widget extends WP_Widget {
 
 // Shortcode: [weather_form]
 function ww_weather_shortcode() {
-    wp_enqueue_style('ww-weather-style', plugins_url('css/style.css', __FILE__));
-    wp_enqueue_script('ww-weather-script', plugins_url('js/api.js', __FILE__), array(), false, true);
-
+    wp_enqueue_style('ww-weather-style', plugins_url('css/frontEndStyle.css', __FILE__));
+    wp_enqueue_script('ww-weather-script', plugins_url('js/renderData.js', __FILE__), array(), false, true);
+    //enable modules
+    function ww_add_module_type_to_script($tag, $handle, $src) {
+        if ($handle === 'ww-weather-script') {
+            return '<script type="module" src="' . esc_url($src) . '"></script>';
+        }
+        return $tag;
+    }
+    add_filter('script_loader_tag', 'ww_add_module_type_to_script', 10, 3);
+    
     ob_start();
     include plugin_dir_path(__FILE__) . 'templates/widget-display.php';
     return ob_get_clean();

@@ -1,4 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
+<?php
+require_once plugin_dir_path(__FILE__) . '../settingsRenderer.php';
+function my_plugin_city_list_render() {
+    $cities = get_option('my_plugin_city_list', []);
+    if (!is_array($cities)) {
+        $cities = [];
+    }
+    ?>
+    <div id="city-list-wrapper">
+        <?php foreach ($cities as $index => $city): ?>
+            <div class="city-row">
+                <input type="text" name="my_plugin_city_list[]" value="<?php echo esc_attr($city); ?>" />
+                <button type="button" class="remove-city">Usuń</button>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <button type="button" id="add-city">Add new place</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.getElementById('city-list-wrapper');
     const addBtn = document.getElementById('add-city');
 
@@ -29,3 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     updateButtons();
 });
+    </script>
+    <?php
+}

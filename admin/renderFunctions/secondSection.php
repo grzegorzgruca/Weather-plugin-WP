@@ -6,6 +6,7 @@ function my_plugin_city_list_render() {
         $cities = [];
     }
     ?>
+
     <div id="city-list-wrapper">
         <?php foreach ($cities as $index => $city): ?>
             <div class="city-row">
@@ -16,10 +17,11 @@ function my_plugin_city_list_render() {
     </div>
     <button type="button" id="add-city">Add new place</button>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.getElementById('city-list-wrapper');
     const addBtn = document.getElementById('add-city');
-
+    
+    // menaging second section form buttons
     function updateButtons() {
         const removeButtons = wrapper.querySelectorAll('.remove-city');
         removeButtons.forEach(btn => {

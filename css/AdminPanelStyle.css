@@ -1,0 +1,99 @@
+.wrap {
+    font-family: "Open Sans", sans-serif;
+    max-width: 760px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fafafa;
+    border-radius: 6px;
+    border: 1px solid #e6e6e6;
+}
+
+.wrap h1 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+}
+
+.wrap form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input[name="my_plugin_city_placeholder"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#city-list-wrapper {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.city-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.9rem;
+}
+
+.city-row input[type="text"][name="my_plugin_city_list[]"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.city-row .remove-city {
+    background-color: #ff4b4b;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.city-row .remove-city:hover {
+    background-color: #e34343;
+}
+
+#add-city {
+    margin-top: 1rem;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#add-city:hover {
+    background-color: #005177;
+}
+
+.wrap .button-primary {
+    background-color: #0073aa;
+    box-shadow: none;
+    outline: none;
+}
+
+.wrap .button-primary:hover {
+    background-color: #006799;
+}
+#submit {
+    outline: none;
+    border: none;
+    transition: .6s;
+}

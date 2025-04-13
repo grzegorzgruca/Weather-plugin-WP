@@ -32,6 +32,7 @@
   color: red;
   font-size: 14px;
 }
+
 .weather-result {
   margin-top: 20px;
   padding: 12px;
@@ -40,6 +41,12 @@
   border-radius: 8px;
   font-size: 16px;
   text-align: center;
-  font-weight: bold;
   color: #0073aa;
+  text-align: left;
+  margin-left: .6rem;
+}
+
+.temperature_result_additional {
+  margin: .4rem 0;
+  display: block;
 }

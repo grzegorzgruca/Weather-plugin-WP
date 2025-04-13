@@ -2,7 +2,7 @@
 /*
 Plugin Name: Weather Widget
 Description: Prosty widget pogodowy
-Version: 1.0
+Version: 2.0
 Author: Grzegorz
 */
 

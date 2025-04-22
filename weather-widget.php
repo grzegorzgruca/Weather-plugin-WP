@@ -7,14 +7,16 @@ Author: Grzegorz
 */
 
 //ATTACHED FILES
+require_once plugin_dir_path(__FILE__) . 'changelogLogger.php';
+register_activation_hook( __FILE__, 'my_plugin_create_table' );
+
+
 require_once plugin_dir_path(__FILE__) . 'admin/pageRenderer.php';
 require_once plugin_dir_path(__FILE__) . 'admin/settingsRenderer.php';
-
 function ww_register_weather_widget() {
     register_widget('WW_weather_widget');
 }
 add_action('widgets_init', 'ww_register_weather_widget');
-
 
 class WW_weather_widget extends WP_Widget {
     function __construct() {
